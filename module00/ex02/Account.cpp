@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 01:53:59 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/11 02:44:58 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/11 23:18:57 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,10 +146,10 @@ void Account::displayStatus(void) const
 
 void Account::_displayTimestamp(void)
 {
-    std::cout << "[19920104_091532] ";
-    // std::time_t t=std::time(NULL);
-    // char tmpstr[100];
+    // std::cout << "[19920104_091532] ";
+    std::time_t t=std::time(NULL);
+    char tmpstr[100];
     
-    // if(std::strftime(tmpstr, sizeof(tmpstr), "[%Y%m%d_%H%M%S] ", std::localtime(&t)))
-    //     std::cout << tmpstr;
+    if(std::strftime(tmpstr, sizeof(tmpstr), "[%Y%m%d_%H%M%S] ", std::localtime(&t)))
+        std::cout << tmpstr;
 }
