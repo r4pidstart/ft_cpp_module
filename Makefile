@@ -6,30 +6,35 @@
 #    By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:48:31 by tjo               #+#    #+#              #
-#    Updated: 2023/01/11 01:58:26 by tjo              ###   ########.fr        #
+#    Updated: 2023/01/12 03:42:14 by tjo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = test
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g3 -ggdb -fsanitize=address
+C++ = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g3 -ggdb -fsanitize=address
 
 SRCS_FOLDER = ./
-
 SRCS = tests.cpp Account.cpp
 
-# ifdef BONUS
-# endif
+ifdef cppver
+	C++ = g++-12
+	CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+endif
 
 all: $(NAME)
 
 $(NAME): $(addprefix $(SRCS_FOLDER), $(SRCS:.cpp=.o))
-	c++ $(CPPFLAGS) -o ./$(NAME) $(SRCS:.cpp=.o)
+	$(C++) $(CXXFLAGS) -o ./$(NAME) $(SRCS:.cpp=.o)
 
 %.o: %.cpp
-	c++ $(CPPFLAGS) -c $^ -o $@
+	$(C++) $(CXXFLAGS) -c $^ -o $@
 
 bonus:
 	$(MAKE) BONUS=1
+
+cppver:
+	$(MAKE) cppver=1
 
 clean:
 	rm -rf */*.o
