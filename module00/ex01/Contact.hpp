@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:36:21 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/11 01:45:40 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/12 20:35:26 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ class Contact
         // ~Contact()
         // Contact(const Contact &)
         // Contact &operator=(const Contact &)
-        std::string first_name, last_name, nickname, darkest_secret;
     private:
+        std::string first_name, last_name, nickname, darkest_secret;
 };
