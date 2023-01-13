@@ -6,7 +6,7 @@
 #    By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:48:31 by tjo               #+#    #+#              #
-#    Updated: 2023/01/14 01:58:07 by tjo              ###   ########.fr        #
+#    Updated: 2023/01/14 01:59:37 by tjo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ G++ = g++-12
 G++FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 SRCS_FOLDER = ./
-SRCS = main.cpp Fixed.cpp bsp.cpp Point.cpp
+SRCS = main.cpp Fixed.cpp
 
 all: $(NAME)
 
