@@ -9,7 +9,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"program": "/Users/jotaesik/ft_cpp_module/test",
-			"args": [""],
+			"args": ["Makefile", "Make", "testttttttttttttt"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],

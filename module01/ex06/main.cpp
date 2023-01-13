@@ -5,34 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 18:15:24 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/12 19:01:35 by tjo              ###   ########.fr       */
+/*   Created: 2023/01/13 22:36:33 by tjo               #+#    #+#             */
+/*   Updated: 2023/01/13 23:11:14 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"HumanA.hpp"
-#include"HumanB.hpp"
-#include"Weapon.hpp"
-#include <iostream>
+#include"Harl.hpp"
+#include<iostream>
 
-int main()
+int main(int ac, char **av)
 {
+    if (ac == 2)
     {
-        Weapon club = Weapon("crude spiked club");
-
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
+        Harl h;
+        h.complain(av[1]);
     }
-    {
-        Weapon club = Weapon("crude spiked club");
-        
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
-    }
-    return 0;
+    else
+        std::cout << av[0] << " COMMAND\n";
 }

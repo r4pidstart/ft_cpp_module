@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 18:53:40 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/12 19:01:25 by tjo              ###   ########.fr       */
+/*   Created: 2023/01/12 18:50:38 by tjo               #+#    #+#             */
+/*   Updated: 2023/01/13 21:53:37 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"HumanB.hpp"
-#include<iostream>
+#pragma once
 
-HumanB::HumanB(std::string name)
-{
-    this->name=name;
-    this->weapon=0;
-}
+#include"Weapon.hpp"
+#include<string>
 
-void HumanB::attack(void)
+class HumanA
 {
-    std::cout << name << " attacks with their " << weapon->getType() << '\n' << std::flush;
-}
-
-void HumanB::setWeapon(Weapon& weapon)
-{
-    this->weapon=&weapon;
-}
+    public:
+        HumanA(std::string, Weapon&);
+        // ~HumanA()
+        // HumanA(const HumanA &)
+        // HumanA &operator=(const HumanA &)
+        void attack(void);
+    private:
+        Weapon *weapon;
+        std::string name;
+};

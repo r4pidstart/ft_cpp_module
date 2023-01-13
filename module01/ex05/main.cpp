@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 16:43:23 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/13 21:42:02 by tjo              ###   ########.fr       */
+/*   Created: 2023/01/13 22:36:33 by tjo               #+#    #+#             */
+/*   Updated: 2023/01/13 23:07:08 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
-#include<string>
+#include"Harl.hpp"
 
-void randomChump(std::string name)
+int main(void)
 {
-    Zombie(name).announce();
+    Harl h;
+    h.complain("DEBUG");
+    h.complain("INFO");
+    h.complain("WARNING");
+    h.complain("ERROR");
+    h.complain("ASDF");
 }

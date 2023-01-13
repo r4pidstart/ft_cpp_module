@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 18:32:39 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/12 19:00:20 by tjo              ###   ########.fr       */
+/*   Created: 2023/01/13 22:44:32 by tjo               #+#    #+#             */
+/*   Updated: 2023/01/13 22:57:03 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Weapon.hpp"
+#pragma once
 
-Weapon::Weapon()
-{
-    type="unknown";
-}
+#include<string>
 
-std::string Weapon::getType(void)
+class Harl
 {
-    return type;
-}
-
-void Weapon::setType(std::string s)
-{
-    type=s;
-}
+    private:
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
+    public:
+        void complain(std::string level);
+};

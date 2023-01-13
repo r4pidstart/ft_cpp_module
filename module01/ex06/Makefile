@@ -6,20 +6,20 @@
 #    By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:48:31 by tjo               #+#    #+#              #
-#    Updated: 2023/01/13 23:23:46 by tjo              ###   ########.fr        #
+#    Updated: 2023/01/13 23:20:13 by tjo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
+NAME = harlFilter
 C++ = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g3 -ggdb -fsanitize=address
 
 SRCS_FOLDER = ./
-SRCS = main.cpp
+SRCS = main.cpp Harl.cpp
 
 ifdef cppver
 	C++ = g++-12
-	CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+	CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-pedantic
 endif
 
 all: $(NAME)

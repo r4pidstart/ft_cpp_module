@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:38:18 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/12 16:54:20 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/13 21:45:57 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ class Zombie
     public:
         Zombie();
         Zombie(std::string name);
-        // ~Zombie()
+        ~Zombie();
         // Zombie(const Zombie &)
         // Zombie &operator=(const Zombie &)
         void announce(void);
+        void setName(std::string name);
     private:
         std::string name;
 };

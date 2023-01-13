@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 18:50:38 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/12 19:01:28 by tjo              ###   ########.fr       */
+/*   Created: 2023/01/12 18:53:40 by tjo               #+#    #+#             */
+/*   Updated: 2023/01/13 21:51:53 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include"HumanA.hpp"
+#include<iostream>
 
-#include"Weapon.hpp"
-#include<string>
-
-class HumanA
+HumanA::HumanA(std::string name, Weapon& weapon)
 {
-    public:
-        HumanA(std::string, Weapon&);
-        // ~HumanA()
-        // HumanA(const HumanA &)
-        // HumanA &operator=(const HumanA &)
-        void attack(void);
-    private:
-        Weapon *weapon;
-        std::string name;
+    this->name=name;
+    this->weapon=&weapon;
+}
+
+void HumanA::attack(void)
+{
+    std::cout << name << " attacks with their " << weapon->getType() << '\n' << std::flush;
 }

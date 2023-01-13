@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 16:43:23 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/13 21:42:02 by tjo              ###   ########.fr       */
+/*   Created: 2023/01/12 18:50:38 by tjo               #+#    #+#             */
+/*   Updated: 2023/01/13 21:53:40 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
+#pragma once
+
+#include"Weapon.hpp"
 #include<string>
 
-void randomChump(std::string name)
+class HumanB
 {
-    Zombie(name).announce();
-}
+    public:
+        HumanB(std::string);
+        // ~HumanB()
+        // HumanB(const HumanB &)
+        // HumanB &operator=(const HumanB &)
+        void attack(void);
+        void setWeapon(Weapon&);
+    private:
+        Weapon *weapon;
+        std::string name;
+};

@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:40:15 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/12 16:50:37 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/13 21:43:12 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,18 @@
 Zombie::Zombie()
 {
     name="unknown";
+    std::cout << name << " is allocated\n" << std::flush;
+}
+
+Zombie::~Zombie()
+{
+    std::cout << name << " is destructed\n" << std::flush;
 }
 
 Zombie::Zombie(std::string name)
 {
     this->name=name;
+    std::cout << name << " is allocated\n" << std::flush;
 }
 
 void Zombie::announce(void)
