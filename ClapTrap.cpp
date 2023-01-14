@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 09:33:27 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/14 10:49:32 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/14 16:20:50 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,20 @@ ClapTrap::ClapTrap(std::string name)
 {
     std::cout << "constructor with name called\n";
     hit=10, energy=10, damage=0;
+    this->name=name;
+}
+
+ClapTrap::ClapTrap(std::string name, int hit, int energy, int damage)
+{
+    std::cout << "constructor with name and attributes called\n";
+    this->hit=hit, this->energy=energy, this->damage=damage;
+    this->name=name;
+}
+
+ClapTrap::ClapTrap(int hit, int energy, int damage)
+{
+    std::cout << "constructor with attributes called\n";
+    this->hit=hit, this->energy=energy, this->damage=damage;
     this->name=name;
 }
 
