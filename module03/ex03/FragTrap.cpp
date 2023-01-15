@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 09:03:58 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 14:56:43 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/16 01:02:34 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,6 @@ FragTrap& FragTrap::operator=(const FragTrap& a)
     hit=a.hit, energy=a.energy, damage=a.damage;
     std::cout << "FragTrap " << name << " copy assignment operator called\n" << std::flush;
     return *this;
-}
-
-void FragTrap::attack(const std::string& target)
-{
-    if(!hit || !energy)
-        std::cout << "FragTrap " << name << " cannot do anything\n";
-    else
-        std::cout << "FragTrap " << name << " attacks " << target << " causing " << damage << " damage\n"; 
-    energy--;
 }
 
 void FragTrap::highFiveGuys(void)

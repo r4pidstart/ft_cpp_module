@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:54:03 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 10:48:05 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/16 01:02:24 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class FragTrap : public ClapTrap
         FragTrap(const FragTrap&);
         ~FragTrap();
         FragTrap& operator=(const FragTrap&);
-        
-        void attack(const std::string&);
+
         void highFiveGuys();
 };
