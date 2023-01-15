@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 09:13:24 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/14 10:08:04 by tjo              ###   ########.fr       */
+/*   Created: 2023/01/14 10:54:03 by tjo               #+#    #+#             */
+/*   Updated: 2023/01/15 10:48:05 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include"ClapTrap.hpp"
+#include<string>
 
-int main(void)
+class FragTrap : public ClapTrap
 {
-    ClapTrap A;
-    ClapTrap B("B"); // hit:10 energy:10 attack:0
-
-    A.attack("target");
-    B.attack("target"); // hit:10 energy:9 attack:0
-
-    B.takeDamage(5); // hit:5 energy:9 attack:0
-    B.beRepaired(15); // hit:20 energy:8 attack:0
-
-    B.takeDamage(20); // hit:0 energy:0 attack:0
-    B.attack("target");
-    B.beRepaired(100);
-}
+    public:
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap(const FragTrap&);
+        ~FragTrap();
+        FragTrap& operator=(const FragTrap&);
+        
+        void attack(const std::string&);
+        void highFiveGuys();
+};
