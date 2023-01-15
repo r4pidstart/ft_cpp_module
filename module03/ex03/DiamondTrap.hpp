@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 12:21:51 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 14:12:17 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/15 16:29:41 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ class DiamondTrap : public FragTrap, public ScavTrap
         DiamondTrap& operator=(const DiamondTrap&);
         void whoAmI();
         void attack(const std::string&);
+        void myStats(void);
 };

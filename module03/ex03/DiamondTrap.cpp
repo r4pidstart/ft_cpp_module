@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 12:21:53 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 16:17:27 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/15 16:29:26 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,9 @@ void DiamondTrap::whoAmI(void)
 void DiamondTrap::attack(const std::string& target)
 {
     ScavTrap::attack(target);
+}
+
+void DiamondTrap::myStats(void)
+{
+    std::cout << "Hit :" << hit << "\nEnergy :" << energy << "\nAttack damage :" << damage << "\n" << std::flush;
 }
