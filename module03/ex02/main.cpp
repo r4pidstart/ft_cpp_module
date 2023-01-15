@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 09:13:24 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 11:14:42 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/15 15:43:02 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ int main(void)
     
     A.takeDamage(5); // hit:95 energy:49 attack:0
     A.beRepaired(15); // hit:110 energy:48 attack:0
+    
     B.takeDamage(5); // hit:5 energy:9 attack:0
     B.beRepaired(15); // hit:20 energy:8 attack:0
+
     C.beRepaired(500); // hit:600 energy:98 attack:30
 
     B.takeDamage(20); // hit:0 energy:0 attack:0

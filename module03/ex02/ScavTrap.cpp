@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 09:03:58 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 10:32:07 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/15 15:36:50 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    hit=100, energy=100, damage=20;
+    hit=100, energy=50, damage=20;
     std::cout << "ScavTrap " << name << " default constructor called\n" << std::flush;
 }
 
@@ -27,7 +27,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    hit=100, energy=100, damage=20;
+    hit=100, energy=50, damage=20;
     std::cout << "ScavTrap " << name << " constructor with string called\n" << std::flush;
 }
 
@@ -50,7 +50,7 @@ void ScavTrap::attack(const std::string& target)
     if(!hit || !energy)
         std::cout << "ScavTrap " << name << " cannot do anything\n";
     else
-        std::cout << "ScavTrap" << name << " attacks " << target << " causing " << damage << " damage\n"; 
+        std::cout << "ScavTrap " << name << " attacks " << target << " causing " << damage << " damage\n"; 
     energy--;
 }
 

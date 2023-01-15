@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 09:33:27 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 10:21:18 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/15 15:32:52 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ClapTrap::ClapTrap()
 {
     name="default";
-    hit=100, energy=100, damage=20;
+    hit=10, energy=10, damage=0;
     std::cout << "ClapTrap " << name << " default constructor called\n" << std::flush;
 }
 
@@ -29,7 +29,7 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(std::string name)
 {
     this->name=name;
-    hit=100, energy=100, damage=20;
+    hit=10, energy=10, damage=0;
     std::cout << "ClapTrap " << name << " constructor with string called\n" << std::flush;
 }
 
@@ -52,23 +52,25 @@ void ClapTrap::attack(const std::string& target)
     if(!hit || !energy)
         std::cout << "ClapTrap " << name << " cannot do anything\n";
     else
-        std::cout << "ClapTrap" << name << " attacks " << target << " causing " << damage << " damage\n"; 
-    energy--;
+    {
+        std::cout << "ClapTrap " << name << " attacks " << target << " causing " << damage << " damage\n"; 
+        energy--;
+    }
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << name << " lost " << amount << " of hit point(s)\n";
+    std::cout << "ClapTrap " << name << " lost " << amount << " of hit point(s)\n";
     hit=0>(hit-(int)amount) ? 0:hit-(int)amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if(!energy || !hit)
-        std::cout << name << " cannot do anything\n";
+        std::cout << "ClapTrap " << name << " cannot do anything\n";
     else
     {
-        std::cout << name << " is repaired " << amount << " of hit point(s)\n";
+        std::cout << "ClapTrap " << name << " is repaired " << amount << " of hit point(s)\n";
         energy--;
         hit+=amount;
     }

@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 09:03:58 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 10:48:44 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/15 14:56:43 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void FragTrap::attack(const std::string& target)
     if(!hit || !energy)
         std::cout << "FragTrap " << name << " cannot do anything\n";
     else
-        std::cout << "FragTrap" << name << " attacks " << target << " causing " << damage << " damage\n"; 
+        std::cout << "FragTrap " << name << " attacks " << target << " causing " << damage << " damage\n"; 
     energy--;
 }
 
