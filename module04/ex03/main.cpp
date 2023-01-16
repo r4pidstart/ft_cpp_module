@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 02:22:37 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/16 03:33:09 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/16 17:47:31 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int main()
     delete ice;
     delete cure;
 
-    system("leaks $PPID");
+    // system("leaks $PPID");
     return 0;
 }
