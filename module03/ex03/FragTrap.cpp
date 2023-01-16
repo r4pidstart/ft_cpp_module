@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 09:03:58 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/16 01:02:34 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/16 17:03:56 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ FragTrap& FragTrap::operator=(const FragTrap& a)
 
 void FragTrap::highFiveGuys(void)
 {
+    if(!hit || !energy)
+        std::cout << "FragTrap " << name << " cannot do anything\n";
     std::cout << "FragTrap " << name << " : highfive!\n" << std::flush; 
 }

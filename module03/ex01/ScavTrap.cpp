@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 09:03:58 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/15 15:37:00 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/16 17:04:42 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,7 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate(void)
 {
+    if(!hit || !energy)
+        std::cout << "ScavTrap " << name << " cannot do anything\n";
     std::cout << "ScavTrap " << name << " is now in Gatekeeper mode.\n" << std::flush; 
 }
