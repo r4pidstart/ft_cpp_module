@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 01:09:15 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/16 17:39:22 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/17 04:17:44 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,14 @@ Dog::~Dog()
 Dog::Dog(const Dog& a) : Animal(a)
 {
     std::cout << "Dog copy constructor called\n" << std::flush;
+    brain=new Brain();
     *this=a;
 }
 
 Dog& Dog::operator=(const Dog& a)
 {
     type=a.type;
-    brain=new Brain(*a.brain);
+    *brain=*a.brain;
     return *this;
 }
 

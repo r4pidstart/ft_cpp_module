@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 01:09:15 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/16 17:38:14 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/17 04:17:50 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,14 @@ Cat::~Cat()
 Cat::Cat(const Cat& a) : Animal(a)
 {
     std::cout << "Cat copy constructor called\n" << std::flush;
+    brain=new Brain();
     *this=a;
 }
 
 Cat& Cat::operator=(const Cat& a)
 {
     type=a.type;
-    brain=new Brain(*a.brain);
+    *brain=*a.brain;
     return *this;
 }
 
