@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 01:09:15 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/16 16:09:06 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/16 17:39:18 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Cat::Cat(const Cat& a) : Animal(a)
 
 Cat& Cat::operator=(const Cat& a)
 {
+    type=a.type;
     brain=new Brain(*a.brain);
     return *this;
 }

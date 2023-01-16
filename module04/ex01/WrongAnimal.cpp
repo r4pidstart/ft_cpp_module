@@ -31,7 +31,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& a)
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& a)
 {
-    (void)a;
+    type=a.type;
     return *this;
 }
 

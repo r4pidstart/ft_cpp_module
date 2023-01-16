@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 01:09:15 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/16 01:36:44 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/16 17:36:46 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Animal::Animal(const Animal& a)
 
 Animal& Animal::operator=(const Animal& a)
 {
-    (void)a;
+    type=a.type;
     return *this;
 }
 

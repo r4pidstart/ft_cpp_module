@@ -32,7 +32,7 @@ WrongCat::WrongCat(const WrongCat& a) : WrongAnimal(a)
 
 WrongCat& WrongCat::operator=(const WrongCat& a)
 {
-    (void)a;
+    type=a.type;
     return *this;
 }
 

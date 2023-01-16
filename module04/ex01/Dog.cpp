@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 01:09:15 by tjo               #+#    #+#             */
-/*   Updated: 2023/01/16 16:07:15 by tjo              ###   ########.fr       */
+/*   Updated: 2023/01/16 17:38:20 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Dog::Dog(const Dog& a) : Animal(a)
 
 Dog& Dog::operator=(const Dog& a)
 {
+    type=a.type;
     brain=new Brain(*a.brain);
     return *this;
 }
