@@ -1,4 +1,4 @@
-# CPP Module
+# ~~CPP Module~~
 #### The goal of these modules is to introduce you to Object-Oriented Programming. This will be the starting point of your C++ journey. You will discover new concepts step-by-step. The exercises will progressively increase in complexity.
 
 *Version : 8*
