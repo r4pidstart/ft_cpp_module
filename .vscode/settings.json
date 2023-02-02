@@ -72,5 +72,6 @@
     },
     "search.sortOrder": "type",
     "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
-    "C_Cpp.default.cppStandard": "c++98"
+    "C_Cpp.default.cppStandard": "c++98",
+    "editor.insertSpaces": true
 }

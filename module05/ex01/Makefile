@@ -6,7 +6,7 @@
 #    By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:48:31 by tjo               #+#    #+#              #
-#    Updated: 2023/02/03 06:12:44 by tjo              ###   ########.fr        #
+#    Updated: 2023/01/29 05:49:43 by tjo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ G++ = g++-12
 G++FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 SRCS_FOLDER = ./
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 all: $(NAME)
 

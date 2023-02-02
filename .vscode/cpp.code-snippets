@@ -1,0 +1,49 @@
+{
+	"header":
+	{
+		"prefix": "header",
+		"body":[
+			"#pragma once",
+			"",
+			"class $1",
+			"{",
+			"    private:",
+			"",
+			"    public:",
+			"        $1();",
+			"        ~$1();",
+			"        $1(const $1 &a);",
+			"        $1& operator=(const $1 &a);",
+			"};"
+		], 
+		"description": "",
+	},
+	"cppfile":
+	{
+		"prefix": "cppfile",
+		"body":[
+			"#include\"$1.hpp\"",
+			"",
+			"$1::$1()",
+			"{",
+			"",
+			"}",
+			"",
+			"$1::~$1()",
+			"{",
+			"",
+			"}",
+			"",
+			"$1::$1(const $1 &a)",
+			"{",
+			"",
+			"}",
+			"",
+			"$1& $1::operator=(const $1 &a)",
+			"{",
+			"",
+			"}",
+			""
+		]
+	}
+}
