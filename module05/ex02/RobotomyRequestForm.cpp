@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 05:01:55 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/03 05:44:04 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/03 16:45:08 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ const char * RobotomyRequestForm::CannotExecuteException::what(void) const throw
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    if(getGradeSign() < executor.getGrade() || getGradeExecute() < executor.getGrade())
+    if(getGradeExecute() < executor.getGrade())
         throw CannotExecuteException();
 
     std::cout << "* Drilling noise *\n" << std::flush;

@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 05:01:55 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/03 05:44:48 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/03 16:45:02 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ const char * PresidentialPardonForm::CannotExecuteException::what(void) const th
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    if(getGradeSign() < executor.getGrade() || getGradeExecute() < executor.getGrade())
+    if(getGradeExecute() < executor.getGrade())
         throw CannotExecuteException();
         
     std::cout << getName() << " has been pardoned by Zaphod Beeblebrox.\n" << std::flush;

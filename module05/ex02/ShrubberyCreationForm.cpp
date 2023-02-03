@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 05:01:55 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/03 05:41:30 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/03 16:45:11 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ const char * ShrubberyCreationForm::CannotExecuteException::what(void) const thr
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    if(getGradeSign() < executor.getGrade() || getGradeExecute() < executor.getGrade())
+    if(getGradeExecute() < executor.getGrade())
         throw CannotExecuteException();
 
     std::ofstream os((getName()+"_shrubbery").c_str(), std::ios::out);
