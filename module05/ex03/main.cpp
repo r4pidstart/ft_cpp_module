@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 04:54:02 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/03 06:12:37 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/03 16:50:50 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ int main(void)
     Form *presidential=intern.makeForm("presidential", "presidential");
     Form *robotomy=intern.makeForm("robotomy", "robotomy");
     Form *shrubbery=intern.makeForm("shrubbery", "shrubbery");
+
+    try
+    {
+        Form *testform=intern.makeForm("test", "test");
+        (void)testform;
+    }
+    catch(std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     
     Bureaucrat test("test", 50);
 
@@ -65,13 +75,4 @@ int main(void)
     test2.executeForm(*presidential);
     test2.executeForm(*robotomy);
     test2.executeForm(*shrubbery);
-
-    try
-    {
-        intern.makeForm("test", "test");
-    }
-    catch(std::exception &e)
-    {
-        std::cout << e.what() << std::flush;
-    }
 }

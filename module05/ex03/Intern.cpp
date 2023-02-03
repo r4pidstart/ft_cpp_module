@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 05:48:18 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/03 06:13:09 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/03 16:50:15 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include<iostream>
 
 Intern::Intern()
 {
@@ -63,7 +64,10 @@ Form* Intern::makeForm(const std::string& targetForm, const std::string& targetN
     
     for(int i=0; i<3; i++)
         if(targetForm == forms[i])
+        {
+            std::cout << "Intern creates " << targetForm << " " << targetName << '\n' << std::flush;
             return (this->*fp[i])(targetName);
+        }
     throw TargetFormDoNotExist();
     return 0;
 }
