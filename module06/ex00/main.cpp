@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 16:05:49 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/06 16:58:42 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/06 19:51:33 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,27 @@ int check_literals(const std::string& target)
 }
 
 int check_target(std::string& target)
-{   
-    if(target.size()==1)
-        return 0;
+{     
+    // multiple point
+    int point_cnt=0;
     for(size_t i=0; i<target.size(); i++)
-        if(!std::isdigit(target[i]) and 
-            (!(i==target.size()-1 and target[i]=='f') and !(i==0 and target[i]=='-')))
-                return 1;
+        if(target[i]=='.') 
+            point_cnt+=1 + (i==0 or i==target.size()-1);
+    if(point_cnt > 1)
+        return 1;
+    
+    // other character on first character
+    if(!std::isdigit(target[0]) and target[0] != '-' and target[0] != '+')
+        return 1;
+    
+    // other chracter on last character
+    if(!std::isdigit(target[target.size()-1]) and target[target.size()-1] != 'f')
+        return 1;
+    
+    for(size_t i=1; i+1<target.size(); i++)
+        if(!std::isdigit(target[i]) and target[i]!='.')
+            return 1;
+    
     return 0;
 }
 
@@ -65,8 +79,11 @@ int main(int ac, char** av)
     
     std::string target(av[1]);
     
+    // check only one character
     int char_flag=0;
-    if(target.size()==3 and target[0]=='\'' and target[1]=='\'')
+    if(target.size()==1)
+        target="'"+target+"'";
+    if(target.size()==3 and target[0]=='\'' and target[2]=='\'')
         char_flag=1;
         
     if(!char_flag && (check_literals(target) || check_target(target)))
