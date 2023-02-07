@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 04:03:20 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/08 05:06:36 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/08 05:08:31 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ Array<T>& Array<T>::operator=(const Array<T> &a)
 {
     if(this == &a) 
         return *this;
-    if(arr)
+    if(this->arr)
         delete[] arr;
     this->arr=new T[a.siz];
     this->siz=a.siz;
-    for(unsigned int i=0; i<siz; i++)
+    for(unsigned int i=0; i<this->siz; i++)
         this->arr[i]=a.arr[i];
     return *this;
 }
