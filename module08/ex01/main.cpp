@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 05:01:39 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/08 05:21:36 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/09 16:18:20 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main()
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
     
-
     Span test(100);
     try
     {
@@ -57,7 +56,7 @@ int main()
         std::cout << a.what();
     }
 
-        try
+    try
     {
         test.shortestSpan();
     }

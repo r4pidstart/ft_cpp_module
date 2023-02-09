@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 05:28:09 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/08 05:55:24 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/09 16:53:58 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,23 @@ int main() {
     }
     std::stack<int> s(mstack);
   }
+
+  MutantStack<int> stk;
+  stk.push(1);
+  stk.push(1);
+  stk.push(1);
+  stk.push(1);
+  stk.push(1);
+
+  MutantStack<int> stkcopied(stk);
+  MutantStack<int> stkcopy_assigned=stk;
+  
+  while(stk.size())
+    std::cout << stk.top(), stk.pop();
+  std::cout << '\n';
+  while(stkcopied.size())
+    std::cout << stkcopied.top(), stkcopied.pop();
+  std::cout << '\n';
+  while(stkcopy_assigned.size())
+    std::cout << stkcopy_assigned.top(), stkcopy_assigned.pop();
 }
