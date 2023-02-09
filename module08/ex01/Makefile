@@ -6,13 +6,13 @@
 #    By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:48:31 by tjo               #+#    #+#              #
-#    Updated: 2023/02/08 05:17:13 by tjo              ###   ########.fr        #
+#    Updated: 2023/02/09 17:38:56 by tjo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = test
 C++ = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3 -ggdb -fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-g3 -ggdb -fsanitize=address
 
 G++ = g++-12
 G++FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic

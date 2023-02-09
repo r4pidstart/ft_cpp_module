@@ -6,13 +6,14 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 05:01:39 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/09 16:18:20 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/09 17:39:21 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Span.hpp"
-#include <exception>
+#include<exception>
 #include<iostream>
+#include<cstdlib>
 
 int main()
 {
@@ -73,4 +74,8 @@ int main()
     {
         std::cout << a.what();
     }
+
+    Span test2(test);
+    Span test3=test;
+    system("leaks $PPID");
 }

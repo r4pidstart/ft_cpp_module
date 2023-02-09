@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 05:28:09 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/09 16:53:58 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/09 17:40:12 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <list>
 #include <stack>
+#include <cstdlib>
 
 int main() {
   {
@@ -77,10 +78,16 @@ int main() {
   
   while(stk.size())
     std::cout << stk.top(), stk.pop();
+    
   std::cout << '\n';
+  
   while(stkcopied.size())
     std::cout << stkcopied.top(), stkcopied.pop();
+
   std::cout << '\n';
+
   while(stkcopy_assigned.size())
     std::cout << stkcopy_assigned.top(), stkcopy_assigned.pop();
+    
+  system("leaks $PPID");
 }
