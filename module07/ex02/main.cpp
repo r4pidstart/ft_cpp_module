@@ -1,47 +1,110 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 04:02:07 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/08 04:35:18 by tjo              ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// /* ************************************************************************** */
+// /*                                                                            */
+// /*                                                        :::      ::::::::   */
+// /*   main.cpp                                           :+:      :+:    :+:   */
+// /*                                                    +:+ +:+         +:+     */
+// /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
+// /*                                                +#+#+#+#+#+   +#+           */
+// /*   Created: 2023/02/08 04:02:07 by tjo               #+#    #+#             */
+// /*   Updated: 2023/02/08 04:35:18 by tjo              ###   ########.fr       */
+// /*                                                                            */
+// /* ************************************************************************** */
 
-#include"Array.hpp"
-#include<exception>
-#include<iostream>
+// #include"Array.hpp"
+// #include<exception>
+// #include<iostream>
 
-int main(void)
-{
-    {
-        Array<int> arr(5);
-        for(int i=0; i<5; i++)
-            std::cout << arr[i] << ' ';
-        std::cout << '\n';
+// int main(void)
+// {
+//     {
+//         Array<int> arr(5);
+//         for(int i=0; i<5; i++)
+//             std::cout << arr[i] << ' ';
+//         std::cout << '\n';
 
-        Array<int> copytest(arr);
-        arr[3]=1;
-        arr[4]=2;
+//         Array<int> copytest(arr);
+//         arr[3]=1;
+//         arr[4]=2;
         
-        for(int i=0; i<5; i++)
-            std::cout << arr[i] << ' ';
-        std::cout << '\n';
+//         for(int i=0; i<5; i++)
+//             std::cout << arr[i] << ' ';
+//         std::cout << '\n';
 
-        for(int i=0; i<5; i++)
-            std::cout << copytest[i] << ' ';
-        std::cout << '\n';
+//         for(int i=0; i<5; i++)
+//             std::cout << copytest[i] << ' ';
+//         std::cout << '\n';
 
-        try
+//         try
+//         {
+//             arr[6];
+//         }
+//         catch(std::exception& e)
+//         {
+//             std::cout << e.what() << std::flush;
+//         }
+//     }
+//     // system("leaks $PPID");
+// }
+
+#include <iostream>
+#include "Array.hpp"
+#include <cstdlib>
+
+#define MAX_VAL 750
+int main(int, char**)
+{
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+
+        for(int i=0; i<MAX_VAL; i++)
+        if(mirror[i] != tmp[i] or mirror[i] != tmp[i])
         {
-            arr[6];
-        }
-        catch(std::exception& e)
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        } 
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
         {
-            std::cout << e.what() << std::flush;
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
         }
     }
-    // system("leaks $PPID");
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
+    system("leaks $PPID");
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 03:35:31 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/08 03:43:24 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/09 15:40:32 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int main(void) {
 
   test test1, test2;
   test1.str="test1", test2.str="test2";
+  ::swap(test1, test2);
   std::cout << "test1 = " << test1.str << ", test2 = " << test2.str << std::endl;
   std::cout << "min( test1, test2 ) = " << ::min(test1, test2).str << std::endl;
   std::cout << "max( test1, test2 ) = " << ::max(test1, test2).str << std::endl;
