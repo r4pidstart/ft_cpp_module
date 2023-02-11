@@ -6,14 +6,15 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 05:01:39 by tjo               #+#    #+#             */
-/*   Updated: 2023/02/09 17:39:21 by tjo              ###   ########.fr       */
+/*   Updated: 2023/02/11 23:46:50 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Span.hpp"
 #include<exception>
 #include<iostream>
-#include<cstdlib>
+#include<iterator>
+#include<vector>
 
 int main()
 {
@@ -26,6 +27,7 @@ int main()
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
     
+
     Span test(100);
     try
     {
@@ -75,7 +77,16 @@ int main()
         std::cout << a.what();
     }
 
-    Span test2(test);
-    Span test3=test;
-    system("leaks $PPID");
+    Span test2(100);
+    std::vector<int> vec(49, 3);
+    vec.push_back(1);
+    test2.addNumber(vec.begin(), vec.end());
+    std::cout << test2.shortestSpan() << ' ' << test2.longestSpan() << '\n';
+    test2.addNumber(vec.begin(), vec.end());
+
+    try {
+    test2.addNumber(vec.begin(), vec.begin()+1);
+    } catch (std::exception &e) {
+        std::cout << e.what();
+    }
 }
