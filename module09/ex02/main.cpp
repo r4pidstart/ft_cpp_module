@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:57:58 by tjo               #+#    #+#             */
-/*   Updated: 2023/03/21 18:05:53 by tjo              ###   ########.fr       */
+/*   Updated: 2023/03/21 18:13:22 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,6 @@
 #include<sys/time.h>
 #include<cmath>
 #include"PmergeMe.hpp"
-
-// • The name of the program is PmergeMe.
-// • The name of the program is PmergeMe.
-// • The name of the program is PmergeMe.
-// Your program must be able to handle atleast 3000 different integers.
-// It is strongly advised to implement your algorithm for each container and thus to avoid using a generic function.
 
 long string_to_integer_32(const std::string& s)
 {
