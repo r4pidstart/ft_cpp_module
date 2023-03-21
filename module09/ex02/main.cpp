@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:57:58 by tjo               #+#    #+#             */
-/*   Updated: 2023/03/21 18:01:54 by tjo              ###   ########.fr       */
+/*   Updated: 2023/03/21 18:05:53 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #include<string>
 #include<vector>
 #include<deque>
+#include<limits>
+#include<climits>
 #include<sstream>
 #include<cstdlib>
 #include<sys/time.h>
 #include<cmath>
-#include<climits>
 #include"PmergeMe.hpp"
 
 // • The name of the program is PmergeMe.
@@ -33,11 +34,11 @@ long string_to_integer_32(const std::string& s)
     for(size_t i=0; i<s.length(); i++)
     {
         if(s[i] != '-' and s[i] != '+' and !std::isdigit(s[i]))
-            return LONG_MAX;
+            return std::numeric_limits<long>::max();
     }
     int tmp=std::atoi(s.c_str());
-    if(s.length() > 11 or tmp > INT_MAX or tmp < INT_MIN)
-        return LONG_MAX;
+    if(s.length() > 11 or tmp > std::numeric_limits<int>::max() or tmp < std::numeric_limits<int>::min())
+        return std::numeric_limits<long>::max();
     return tmp;
 }
 
@@ -62,7 +63,7 @@ int main(int ac, char **av)
     while(ss >> tmp)
     {
         long num=string_to_integer_32(tmp);
-        if(num==LONG_MAX)
+        if(num==std::numeric_limits<long>::max())
         {
             std::cerr << "Error: not an integer (" << tmp << ")\n";
             return 1;
