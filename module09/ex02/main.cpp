@@ -6,7 +6,7 @@
 /*   By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:57:58 by tjo               #+#    #+#             */
-/*   Updated: 2023/03/21 18:13:22 by tjo              ###   ########.fr       */
+/*   Updated: 2023/03/21 23:45:05 by tjo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ long string_to_integer_32(const std::string& s)
         if(s[i] != '-' and s[i] != '+' and !std::isdigit(s[i]))
             return std::numeric_limits<long>::max();
     }
-    int tmp=std::atoi(s.c_str());
+    long tmp=std::atoi(s.c_str());
     if(s.length() > 11 or tmp > std::numeric_limits<int>::max() or tmp < std::numeric_limits<int>::min())
         return std::numeric_limits<long>::max();
     return tmp;
