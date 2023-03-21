@@ -6,7 +6,7 @@
         {
             "label": "build_mandatory",
             "type": "shell",
-            "command": "make -C ${workspaceFolder}",
+            "command": "make debug -C ${workspaceFolder}",
             "group": {
                 "kind": "build",
                 "isDefault": true

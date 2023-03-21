@@ -9,12 +9,8 @@
 			"type": "lldb",
 			"request": "launch",
 			"program": "${workspaceFolder}/test",
-			"args": [""],
-			"stopAtEntry": false,
+			"args": ["input.txt"],
 			"cwd": "${fileDirname}",
-			"environment": [],
-			"externalConsole": false,
-			"MIMode": "lldb",
 			"preLaunchTask": "build_mandatory"
 		}
 	]
