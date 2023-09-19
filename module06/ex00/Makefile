@@ -6,7 +6,7 @@
 #    By: tjo <tjo@student.42seoul.kr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 12:48:31 by tjo               #+#    #+#              #
-#    Updated: 2023/02/06 19:28:11 by tjo              ###   ########.fr        #
+#    Updated: 2023/09/19 18:18:07 by tjo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ G++ = g++-12
 G++FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 SRCS_FOLDER = ./
-SRCS = main.cpp
+SRCS = main.cpp ScalarConverter.cpp
 
 all: $(NAME)
 
@@ -37,6 +37,11 @@ cppver:
 	./$(NAME)
 	@$(MAKE) fclean -s
 
+d:
+	@$(MAKE) fclean -s
+	$(C++) $(C++FLAGS) -DDEBUG -o ./$(NAME) $(SRCS)
+	./$(NAME)
+	
 clean:
 	rm -rf */*.o
 	rm -rf *.o
